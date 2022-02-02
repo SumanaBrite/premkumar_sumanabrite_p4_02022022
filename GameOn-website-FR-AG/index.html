@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>GameOn - Réservation</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="header-container" id="header-container">
+    <div class="header">
+      <img alt="header__logo" src="GameOn-logo.png" />
+    </div>
+    <div class="nav">
+      <a href="#" class="active"><span>Accueil</span></a>
+      <a href="#"><span>Détails de l'évènement</span></a>
+      <a href="#"><span>À propos</span></a>
+      <a href="#"><span>Contact</span></a>
+      <a href="#"><span>Évènements passés</span></a>
+      <a href="javascript:void(0);" class="icon" onclick="navBarResponsive()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+  <main>
+    <div class="info">
+      <div class="info__content">
+        <h1 class="info__headline">
+          Marathon national<br> de jeux vidéos
+        </h1>
+        <p class="info__text">
+          Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux réservations... Places limitées !
+        </p>
+        <button class="btn-signup">
+          <!-- For desktop -->
+          je m'inscris
+        </button>
+      </div>
+      <img class="info__img" src="./background_img.jpg" alt="img" />
+      <button class="btn-signup">
+        <!-- For mobile -->
+        je m'inscris
+      </button>
+    </div>
+    <div class="container-form">
+      <div class="container-form__content">
+        <span class="cross form-close"></span>
+        <div class="container-form__body">
+          <form name="reserve" action="index.html" method="get" onsubmit="return checkInputValidation();">
+            <div class="form__data">
+              <label for="first">Prénom</label><br>
+              <input class="text-control" type="text" id="first" name="first" minlength="2" required /><br>
+              <span class="errorMessage"></span>
+            </div>
+            <div class="form__data">
+              <label for="last">Nom</label><br>
+              <input class="text-control" type="text" id="last" name="last" minlength="2" required /><br>
+              <span class="errorMessage"></span>
+            </div>
+            <div class="form__data">
+              <label for="email">E-mail</label><br>
+              <input class="text-control" type="email" id="email" name="email" required /><br>
+              <span class="errorMessage"></span>
+            </div>
+            <div class="form__data">
+              <label for="birthdate">Date de naissance</label><br>
+              <input class="text-control" type="date" id="birthdate" name="birthdate" required /><br>
+              <span class="errorMessage"></span>
+            </div>
+            <div class="form__data">
+              <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+              <input class="text-control" type="number" id="quantity" name="quantity" min="0" max="99" required>
+              <span class="errorMessage"></span>
+            </div>
+            <p class="text-label">Quelles villes ?</p>
+            <div class="form__data">
+              <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
+              <label class="checkbox-label" for="location1">
+                <span class="checkbox-icon"></span>
+                New York</label>
+              <input class="checkbox-input" type="radio" id="location2" name="location" value="San Francisco" />
+              <label class="checkbox-label" for="location2">
+                <span class="checkbox-icon"></span>
+                San Francisco</label>
+              <input class="checkbox-input" type="radio" id="location3" name="location" value="Seattle" />
+              <label class="checkbox-label" for="location3">
+                <span class="checkbox-icon"></span>
+                Seattle</label>
+              <input class="checkbox-input" type="radio" id="location4" name="location" value="Chicago" />
+              <label class="checkbox-label" for="location4">
+                <span class="checkbox-icon"></span>
+                Chicago</label>
+              <input class="checkbox-input" type="radio" id="location5" name="location" value="Boston" />
+              <label class="checkbox-label" for="location5">
+                <span class="checkbox-icon"></span>
+                Boston</label>
+              <input class="checkbox-input" type="radio" id="location6" name="location" value="Portland" />
+              <label class="checkbox-label" for="location6">
+                <span class="checkbox-icon"></span>
+                Portland</label>
+              <br>
+              <span class="errorMessage"></span>
+            </div>
+            <div class="form__data">
+              <input class="checkbox-input" type="checkbox" id="checkbox1" checked required />
+              <label class="checkbox2-label" for="checkbox1">
+                <span class="checkbox-icon"></span>
+                J'ai lu et accepté les conditions d'utilisation.
+              </label>
+              <br>
+              <span class="errorMessage"></span>
+              <input class="checkbox-input" type="checkbox" id="checkbox2" />
+              <label class="checkbox2-label" for="checkbox2">
+                <span class="checkbox-icon"></span>
+                Je souhaite être prévenu des prochains évènements.
+              </label>
+              <br>
+            </div>
+            <input class="btn-submit" type="submit" value="C'est parti" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="message">
+      <div class="message__content">
+        <span class="cross confirmation-close"></span>
+        <!-- <i class="fal fa-times cross"></i> -->
+        <p class="confirmation-text">
+          Merci pour votre inscription ! 
+        </p>
+        <input class="btn-close" type="submit" value="Fermer" />
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p class="copyrights">
+      Copyright 2014 - 2020, GameOn Inc.
+    </p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
